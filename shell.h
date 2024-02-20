@@ -16,12 +16,4 @@ int launch(char **args);
 int execute(char **args);
 char *read_line(void);
 char ** split_line(char *line);
-/*
- * Built in functions
- */
-
-int cd(char **args);
-int help(char **args);
-int exits(char **args);
-
 #endif

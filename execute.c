@@ -1,7 +1,9 @@
 #include "shell.h"
 #include "util.h"
 
-int (*builtin_func[]) (char **) ={&cd, &help, &exits};
+char *builtin_str[] ={"cd", "help","_exits"};
+
+int (*builtin_func[]) (char **) ={&cd, &help, &_exits};
 
 int num_builtins()
 {
