@@ -1,7 +1,10 @@
 #include "util.h"
 
-
+/*
+ * _exits- function that terminates the shell program
+ * Return: return 0 to quit the program loop and the program itself
+ */
 int _exits(char **args)
 {
-	return 1;
+	return 0;
 }

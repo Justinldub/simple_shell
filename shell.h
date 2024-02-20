@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 /*
- * Core system functions
+ * Core system functions declarations
  */
 void loop(void);
 int launch(char **args);
