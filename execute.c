@@ -2,7 +2,7 @@
 #include "util.h"
 
 /*array for holding predefined command strings*/
-char *builtin_str[] ={"cd", "help","_exits"};
+char *builtin_str[] ={"cd", "help","exit"};
 /*array to hold built in functioins*/
 int (*builtin_func[]) (char **) ={&cd, &help, &_exits};
 /*

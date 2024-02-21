@@ -5,7 +5,7 @@
  */
 char *read_line(void)
 {
-	/
+	
 	char *line = NULL;
 	ssize_t bufsize = 0;
 	if(getline(&line, &bufsize,stdin) == -1)
@@ -13,6 +13,7 @@ char *read_line(void)
 		/*Check if CTRL + D was passed to the terminal*/
 		if(feof(stdin))
 		{
+			printf("log out\n");
 			/*Terminate the program with success*/
 			exit(EXIT_SUCCESS);
 		}
