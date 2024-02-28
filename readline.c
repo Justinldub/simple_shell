@@ -1,8 +1,8 @@
 #include "shell.h"
-/*
- * read_line - function that reads command from the stdin using getline
- * Return: the command that was passed through the terminal
- */
+/**
+  * read_line - function that reads command from the stdin using getline
+  * Return: the command that was passed through the terminal
+  */
 char *read_line(void)
 {
 	

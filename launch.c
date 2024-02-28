@@ -1,8 +1,9 @@
 #include "shell.h"
-/*
- * launch - function that loads and launches another program and execute it using execvp
- * Return: The status code while the shell is running. 1 for success, 0 to exit the shell -1 for error
- */
+/**
+  * launch - function that loads and launches another program and execute it using execvp
+  * args - args of the program including parameters tokenized into a string
+  * Return: The status code while the shell is running. 1 for success, 0 to exit the shell -1 for error
+  */
 int launch(char **args)
 {
 	/*Process ID for programs*/

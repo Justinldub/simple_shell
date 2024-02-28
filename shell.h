@@ -8,9 +8,9 @@
 #include <sys/times.h>
 #include <sys/wait.h>
 
-/*
- * Core system functions
- */
+/**
+  * Core system functions
+  */
 void loop(void);
 int launch(char **args);
 int execute(char **args);

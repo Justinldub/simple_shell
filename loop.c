@@ -12,6 +12,7 @@ void loop(void)
 	/* the status of the program when it is running for error handling purposes */
 	int status;
 
+	
 	do{
 
 		/*Display prompt to the terminal*/
