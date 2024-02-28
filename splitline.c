@@ -8,7 +8,7 @@
   */
 char **split_line(char *line)
 {
-	
+
 	int bufsize = BUFSIZE, position = 0;
 	char **tokens = malloc(bufsize * sizeof(char*));
 	char *token, **tokens_backup;
@@ -42,7 +42,7 @@ char **split_line(char *line)
 				fprintf(stderr, "allocation error\n");
 				exit(EXIT_FAILURE);
 			}
-			
+
 		}
 			token = strtok(NULL, TOKEN_DELIM);
 

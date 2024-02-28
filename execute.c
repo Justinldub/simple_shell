@@ -24,9 +24,9 @@ int num_builtins()
   */
 int execute(char **args)
 {
-	
+
 	int i;
-	
+
 
 	/*Check if args are null return 1 the status code that tells the loop to continue to run*/
 	if(args[0] == NULL)

@@ -5,7 +5,7 @@
   */
 char *read_line(void)
 {
-	
+
 	char *line = NULL;
 	ssize_t bufsize = 0;
 	if(getline(&line, &bufsize,stdin) == -1)
