@@ -2,11 +2,11 @@
 #include "util.h"
 
 /*array for holding predefined command strings*/
-char *builtin_str[] ={"cd", "help","exit"};
-
+char *builtin_str[] ={"cd", "help","exit", "pwd", "ls"};
+char *func_args_str[] = {"ls-l"};
 /*array to hold built in functioins*/
-int (*builtin_func[]) (char **) ={&cd, &help, &_exits};
-
+int (*builtin_func[]) (char **) ={&cd, &help, &_exits, &pwd, &ls};
+int (*func_args[]) (char **) = {&ls_l};
 
 /**
   * num_builtins - function that returns number of builtin functions
@@ -16,7 +16,10 @@ int num_builtins()
 {
 	return sizeof(builtin_str) / sizeof(char *);
 }
-
+int num_func_args()
+{
+	return sizeof(func_args_str) / sizeof(char *);
+}
 /**
   * execute - function that execute the launch program based on the argument passed
   * args - args for the program to be executed
@@ -34,9 +37,31 @@ int execute(char **args)
 
 	for(i = 0; i < num_builtins(); i++)
 	{
-		/*if args at 0 correspond to the builtin function return the index of that function which will be executed on launch*/
+		
 		if(strcmp(args[0], builtin_str[i]) == 0)
+		{
 			return (*builtin_func[i])(args);
+		}
 	}
-	return launch(args);
+	
+			char *path = getenv("PATH");
+			if (path == NULL)
+			{
+				fprintf(stderr, "Error: PATH environment variable not set\n");
+				exit(EXIT_FAILURE);
+			}
+			char *path_copy = strdup(path);
+			char *dir = strtok(path_copy, ":");
+			while(dir != NULL)
+			{
+				char command_path[1024];
+				snprintf(command_path, sizeof(command_path), "%s/%s", dir, args[0]);
+				if(access(command_path, X_OK) == 0)
+					return launch(args);
+				
+				
+				dir =strtok(NULL, ":");
+			}
+			fprintf(stderr,"Command was not found %s\n",args[0]); 
+	return 1;
 }

@@ -7,6 +7,9 @@
 #include <string.h>
 #include <sys/times.h>
 #include <sys/wait.h>
+#include <sys/stat.h>
+#include <pwd.h>
+#include <grp.h>
 
 /**
   * Core system functions
