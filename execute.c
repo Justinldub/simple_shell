@@ -2,10 +2,10 @@
 #include "util.h"
 
 /*array for holding predefined command strings*/
-char *builtin_str[] ={"cd", "help","exit", "pwd", "ls"};
+char *builtin_str[] ={"cd", "help","exit", "pwd", "ls", "env"};
 char *func_args_str[] = {"ls-l"};
 /*array to hold built in functioins*/
-int (*builtin_func[]) (char **) ={&cd, &help, &_exits, &pwd, &ls};
+int (*builtin_func[]) (char **) ={&cd, &help, &_exits, &pwd, &ls, &env};
 int (*func_args[]) (char **) = {&ls_l};
 
 /**
