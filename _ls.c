@@ -3,12 +3,10 @@
 #include <dirent.h>
 
 
-int ls(char **args)
+int ls()
 {
 	DIR *dir;
 	struct dirent *entry;
-	if(args[1] == NULL)
-		return (1);
 
 	if ((dir =opendir(".")) == NULL)
 	{

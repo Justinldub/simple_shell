@@ -5,12 +5,12 @@
   * @args - command line arguments
   * Return: return 1 to continue to loop
   */
-int env(char **args) 
+int env() 
 {
 	char **env;
 	env = environ;
 
-	while(*env != NULL)
+	while (*env != NULL)
 	{
 		printf("%s\n", *env);
 		env++;

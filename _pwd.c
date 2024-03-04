@@ -5,11 +5,10 @@
   * @args - the command line arguments
   * Return: 1 to continue looping the program
   */
-int pwd(char **args)
+int pwd()
 {
 	char path[4096];
-	if(args[1] == NULL)
-		return (1);
+
 	if (getcwd(path, sizeof(path)) != NULL)
 	{
 		printf("%s\n", path);

@@ -8,18 +8,16 @@ char *builtin_st[] ={"cd", "help","_exits"};
   * @args - command line args
   * Return: Always 1 to continue the loop
   */
-int help(char **args)
+int help()
 {
 	int i;
-	if(args[1] == NULL)
-		return (1);
-
+	
 	printf("ALX shell v.1.0.0\n");
 	printf("Type program names and arguments, and hit enter\n");
 	printf("Available builtin commands\n");
-	for(int i = 0; i < num_builtins();i++)
+	for (int i = 0; i < num_builtins();i++)
 	{	
 		printf("%s\n",builtin_st[i]);
 	}
-	return 1;
+	return (1);
 }

@@ -4,9 +4,8 @@
   * @args - command line arguments
   * Return: return 0 to quit the program loop and the program itself
   */
-int _exits(char **args)
+int _exits()
 {
-	if(args[1] == NULL)
-		return (1);
+
 	return 0;
 }

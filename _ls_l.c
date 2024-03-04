@@ -8,14 +8,12 @@
   * Return: return 1 to continue the loop when the program 
   * is done executing
   */
-int ls_l(char **args)
+int ls_l()
 {
 	DIR *dir;
 	struct dirent *entry;
 	struct stat file_stat;
 	printf("attempting to run ls -l command");
-	if(args[1] == NULL)
-		return (1);
 	/* Open the current directory */
 	if ((dir = opendir(".")) == NULL)
 	{
