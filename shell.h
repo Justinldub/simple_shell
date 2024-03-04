@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 #include <pwd.h>
 #include <grp.h>
+#include <time.h>
 
 /**
   * Core system functions

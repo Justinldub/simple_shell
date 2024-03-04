@@ -11,7 +11,8 @@ char *builtin_st[] ={"cd", "help","_exits"};
 int help(char **args)
 {
 	int i;
-
+	if(args[1] == NULL)
+		return (1);
 
 	printf("ALX shell v.1.0.0\n");
 	printf("Type program names and arguments, and hit enter\n");

@@ -8,7 +8,8 @@
 int pwd(char **args)
 {
 	char path[4096];
-
+	if(args[1] == NULL)
+		return (1);
 	if (getcwd(path, sizeof(path)) != NULL)
 	{
 		printf("%s\n", path);

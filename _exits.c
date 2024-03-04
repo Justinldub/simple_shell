@@ -6,5 +6,7 @@
   */
 int _exits(char **args)
 {
+	if(args[1] == NULL)
+		return (1);
 	return 0;
 }

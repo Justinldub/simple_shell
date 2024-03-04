@@ -29,7 +29,9 @@ int execute(char **args)
 {
 
 	int i;
-
+	char *path;
+	char *path_copy;
+	char *dir;
 
 	/*Check if args are null return 1 the status code that tells the loop to continue to run*/
 	if (args[0] == NULL)
@@ -43,17 +45,12 @@ int execute(char **args)
 			return (*builtin_func[i])(args);
 		}
 	}
-	
-			char *path;
-
 			path = getenv("PATH");
 			if (path == NULL)
 			{
 				fprintf(stderr, "Error: PATH environment variable not set\n");
 				exit(EXIT_FAILURE);
 			}
-			char *path_copy;
-			char *dir;
 			
 			path_copy = strdup(path);
 			dir = strtok(path_copy, ":");
@@ -63,9 +60,7 @@ int execute(char **args)
 				snprintf(command_path, sizeof(command_path), "%s/%s", dir, args[0]);
 				if(access(command_path, X_OK) == 0)
 					return launch(args);
-				
-				
-				dir = strtok(NULL, ":");
+					dir = strtok(NULL, ":");
 			}
 			fprintf(stderr,"Command was not found %s\n",args[0]); 
 	return (1);

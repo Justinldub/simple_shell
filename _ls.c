@@ -7,6 +7,8 @@ int ls(char **args)
 {
 	DIR *dir;
 	struct dirent *entry;
+	if(args[1] == NULL)
+		return (1);
 
 	if ((dir =opendir(".")) == NULL)
 	{

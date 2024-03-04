@@ -14,6 +14,8 @@ int ls_l(char **args)
 	struct dirent *entry;
 	struct stat file_stat;
 	printf("attempting to run ls -l command");
+	if(args[1] == NULL)
+		return (1);
 	/* Open the current directory */
 	if ((dir = opendir(".")) == NULL)
 	{
