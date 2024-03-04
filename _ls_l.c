@@ -2,9 +2,11 @@
 #include "util.h"
 #include <dirent.h>
 /**
-  * ls_l - function that lists contents of the current working directory and in long format
+  * ls_l - function that lists contents of the current 
+  * working directory and in long format
   * @args - command line argument
-  * Return: return 1 to continue the loop when the program is done executing
+  * Return: return 1 to continue the loop when the program 
+  * is done executing
   */
 int ls_l(char **args)
 {
@@ -13,7 +15,7 @@ int ls_l(char **args)
 	struct stat file_stat;
 	printf("attempting to run ls -l command");
 	/* Open the current directory */
-	if((dir = opendir(".")) == NULL)
+	if ((dir = opendir(".")) == NULL)
 	{
 		perror("opendir() error");
 		return 1;
@@ -65,5 +67,5 @@ int ls_l(char **args)
 
 		/* Close the directory */
 		closedir(dir);
-		return 1;
+		return (1);
 }

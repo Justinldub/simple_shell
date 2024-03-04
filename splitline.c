@@ -21,14 +21,14 @@ char **split_line(char *line)
 
 	/*Braking the string into tokens*/
 	token = strtok(line, TOKEN_DELIM);
-	while(token != NULL)
+	while (token != NULL)
 	{
 		/*aligning the first token to the 1st position*/
 		tokens[position] = token;
 		/*Moving to the next position to align with the next token*/
 		position++;
 
-		if(position >= bufsize)
+		if (position >= bufsize)
 		{
 			/*increase the buffer to hold as needed*/
 			bufsize += BUFSIZE;
@@ -36,7 +36,7 @@ char **split_line(char *line)
 			tokens_backup = tokens;
 			/*reallocating memory into tokens array*/
 			tokens = realloc(tokens, bufsize *sizeof(char*));
-			if(!tokens)
+			if (!tokens)
 			{
 				free(tokens_backup);
 				fprintf(stderr, "allocation error\n");

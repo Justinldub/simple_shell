@@ -32,26 +32,31 @@ int execute(char **args)
 
 
 	/*Check if args are null return 1 the status code that tells the loop to continue to run*/
-	if(args[0] == NULL)
-	return 1;
+	if (args[0] == NULL)
+	return (1);
 
-	for(i = 0; i < num_builtins(); i++)
+	for (i = 0; i < num_builtins(); i++)
 	{
 		
-		if(strcmp(args[0], builtin_str[i]) == 0)
+		if (strcmp(args[0], builtin_str[i]) == 0)
 		{
 			return (*builtin_func[i])(args);
 		}
 	}
 	
-			char *path = getenv("PATH");
+			char *path;
+
+			path = getenv("PATH");
 			if (path == NULL)
 			{
 				fprintf(stderr, "Error: PATH environment variable not set\n");
 				exit(EXIT_FAILURE);
 			}
-			char *path_copy = strdup(path);
-			char *dir = strtok(path_copy, ":");
+			char *path_copy;
+			char *dir;
+			
+			path_copy = strdup(path);
+			dir = strtok(path_copy, ":");
 			while(dir != NULL)
 			{
 				char command_path[1024];
@@ -60,8 +65,8 @@ int execute(char **args)
 					return launch(args);
 				
 				
-				dir =strtok(NULL, ":");
+				dir = strtok(NULL, ":");
 			}
 			fprintf(stderr,"Command was not found %s\n",args[0]); 
-	return 1;
+	return (1);
 }

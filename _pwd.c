@@ -9,10 +9,10 @@ int pwd(char **args)
 {
 	char path[4096];
 
-	if(getcwd(path,sizeof(path)) != NULL)
+	if (getcwd(path, sizeof(path)) != NULL)
 	{
-		printf("%s\n",path);
+		printf("%s\n", path);
 	}
 
-	return 1;
+	return (1);
 }

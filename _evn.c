@@ -2,12 +2,13 @@
 #include "util.h"
 /**
   * env - function that prints the current environment
-  * @command line arguments
+  * @args - command line arguments
   * Return: return 1 to continue to loop
   */
 int env(char **args) 
 {
-	char **env = environ;
+	char **env;
+	env = environ;
 
 	while(*env != NULL)
 	{
@@ -15,5 +16,5 @@ int env(char **args)
 		env++;
 	}
 
-	return 1;
+	return (1);
 }
